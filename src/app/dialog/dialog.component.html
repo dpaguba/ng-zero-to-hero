@@ -2,7 +2,8 @@
 <div mat-dialog-content>
 
     <mat-form-field appearance="legacy">
-        <input matInput placeholder="New Product">
+        <mat-label>New Product</mat-label>
+        <input matInput>
     </mat-form-field>
     
     <br>
@@ -29,11 +30,32 @@
     </mat-form-field>
 
     <br>
+    
+    <mat-radio-group  class="example-radio-group">
+        <mat-label class="brands">Seafood Brands</mat-label>
+        <mat-radio-button *ngFor="let brand of brands;" [value]="brand" checked="checked" class="radio">{{brand}}</mat-radio-button>
+    </mat-radio-group>
+    
+    <br>
 
     <mat-form-field appearance="legacy">
-        
+        <mat-label>Price</mat-label>
+        <input matInput type="number" min="0">
     </mat-form-field>
 
-    
+    <mat-form-field appearance="legacy">
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" min="0">
+    </mat-form-field>
 
+    <mat-form-field appearance="legacy">
+        <mat-label>Comment</mat-label>
+        <textarea matInput name="comment" id="comment" cols="30" rows="5"></textarea>
+    </mat-form-field>
+</div>
+
+<div mat-dialog-action [align]="'end'" class="btns">
+    <button mat-raised-button color="primary" class="submit-btn">Save</button>
+    <button mat-raised-button color="warn" mat-dialog-close class="cancel-btn">Cancel</button>
+    
 </div>

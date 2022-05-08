@@ -1,3 +1,33 @@
 mat-form-field{
     width: 100%;
 }
+
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    align-items: flex-start;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }
+
+  .brands{
+      font-size: 1.1em;
+      margin: 0;
+      padding: 0;
+
+  }
+  .btns{
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .submit-btn{
+      margin: 8px;
+      background-color: green;
+  }
+  .cancel-btn{
+      margin: 8px;
+  }
