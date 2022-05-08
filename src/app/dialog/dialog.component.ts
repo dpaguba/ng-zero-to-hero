@@ -16,8 +16,18 @@ export class DialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({
-      productName: ['', Validators.required]
+      productName: ['', Validators.required],
+      category: ['', Validators.required],
+      brands: ['', Validators.required],
+      price: ['', Validators.required],
+      amount: ['', Validators.required],
+      date: ['', Validators.required],
+      comment: ['', Validators.nullValidator]
     })
+  }
+
+  addProduct(){
+    console.log(this.productForm.value)
   }
 
 }

@@ -1,61 +1,62 @@
 <h1 mat-dialog-title>Add Product</h1>
 <div mat-dialog-content>
-
-    <mat-form-field appearance="legacy">
-        <mat-label>New Product</mat-label>
-        <input matInput>
-    </mat-form-field>
+    <form [formGroup]="productForm">
+        <mat-form-field appearance="legacy">
+            <mat-label>New Product</mat-label>
+            <input formControlName="productName" matInput >
+        </mat-form-field>
+        
+        <br>
     
-    <br>
-
-    <mat-form-field appearance="legacy">
-        <mat-label>Product Category</mat-label>
-        <mat-select placeholder="choose categpry">
-            <mat-option value="Fish">Fish</mat-option>
-            <mat-option value="Roe">Roe</mat-option>
-            <mat-option value="Shellfish">Shellfish</mat-option>
-            <mat-option value="Medusozoa">Medusozoa</mat-option>
-            <mat-option value="Tunicates">Tunicates</mat-option>
-        </mat-select>
-    </mat-form-field>
-
-    <br>
-
-    <mat-form-field appearance="legacy"> 
-        <mat-label>Choose a Date</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-
-    <br>
+        <mat-form-field appearance="legacy">
+            <mat-label>Product Category</mat-label>
+            <mat-select placeholder="choose categpry" formControlName="category">
+                <mat-option value="Fish">Fish</mat-option>
+                <mat-option value="Roe">Roe</mat-option>
+                <mat-option value="Shellfish">Shellfish</mat-option>
+                <mat-option value="Medusozoa">Medusozoa</mat-option>
+                <mat-option value="Tunicates">Tunicates</mat-option>
+            </mat-select>
+        </mat-form-field>
     
-    <mat-radio-group  class="example-radio-group">
-        <mat-label class="brands">Seafood Brands</mat-label>
-        <mat-radio-button *ngFor="let brand of brands;" [value]="brand" checked="checked" class="radio">{{brand}}</mat-radio-button>
-    </mat-radio-group>
+        <br>
     
-    <br>
-
-    <mat-form-field appearance="legacy">
-        <mat-label>Price</mat-label>
-        <input matInput type="number" min="0">
-    </mat-form-field>
-
-    <mat-form-field appearance="legacy">
-        <mat-label>Amount</mat-label>
-        <input matInput type="number" min="0">
-    </mat-form-field>
-
-    <mat-form-field appearance="legacy">
-        <mat-label>Comment</mat-label>
-        <textarea matInput name="comment" id="comment" cols="30" rows="5"></textarea>
-    </mat-form-field>
+        <mat-form-field appearance="legacy"> 
+            <mat-label>Choose a Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="date">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    
+        <br>
+        
+        <mat-radio-group  class="example-radio-group" formControlName="brands">
+            <mat-label class="brands">Seafood Brands</mat-label>
+            <mat-radio-button *ngFor="let brand of brands;" [value]="brand" checked="checked" class="radio">{{brand}}</mat-radio-button>
+        </mat-radio-group>
+        
+        <br>
+    
+        <mat-form-field appearance="legacy">
+            <mat-label>Price</mat-label>
+            <input matInput type="number" min="0" formControlName="price">
+        </mat-form-field>
+    
+        <mat-form-field appearance="legacy">
+            <mat-label>Amount</mat-label>
+            <input matInput type="number" min="0" formControlName="amount">
+        </mat-form-field>
+    
+        <mat-form-field appearance="legacy">
+            <mat-label>Comment</mat-label>
+            <textarea matInput name="comment" id="comment" cols="30" rows="5" formControlName="comment"></textarea>
+        </mat-form-field>
+    </form>
 </div>
 
 <div mat-dialog-action [align]="'end'" class="btns">
-    <button mat-raised-button color="primary" class="submit-btn">Save</button>
+    <button mat-raised-button color="primary" class="submit-btn" (click)="addProduct()">Save</button>
     <button mat-raised-button color="warn" mat-dialog-close class="cancel-btn">Cancel</button>
     
 </div>
