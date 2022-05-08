@@ -16,5 +16,5 @@ $ npm install -g json-server
 install json server for macOS
 $ sudo npm install -g json-server
 
-create json server
+create json server and start
 $ json-server --watch serverName.json

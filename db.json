@@ -1,6 +1,25 @@
 {
   "productList": [
-    
+    {
+      "productName": "Salmon",
+      "category": "Fish",
+      "brands": "American Seafood",
+      "price": 100,
+      "amount": 78,
+      "date": "2022-05-10T22:00:00.000Z",
+      "comment": "",
+      "id": 1
+    },
+    {
+      "productName": "Tune",
+      "category": "Medusozoa",
+      "brands": "Trident Seafoods",
+      "price": 54,
+      "amount": 5,
+      "date": "2022-05-03T22:00:00.000Z",
+      "comment": "",
+      "id": 2
+    }
   ],
   "comments": [
     {
