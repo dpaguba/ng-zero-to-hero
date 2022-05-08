@@ -1,8 +1,12 @@
 <h1 mat-dialog-title>Add Product</h1>
 <div mat-dialog-content>
+
     <mat-form-field appearance="legacy">
         <input matInput placeholder="New Product">
     </mat-form-field>
+    
+    <br>
+
     <mat-form-field appearance="legacy">
         <mat-label>Product Category</mat-label>
         <mat-select placeholder="choose categpry">
@@ -11,8 +15,25 @@
             <mat-option value="Shellfish">Shellfish</mat-option>
             <mat-option value="Medusozoa">Medusozoa</mat-option>
             <mat-option value="Tunicates">Tunicates</mat-option>
-
-
         </mat-select>
     </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="legacy"> 
+        <mat-label>Choose a Date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="legacy">
+        
+    </mat-form-field>
+
+    
+
 </div>
