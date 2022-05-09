@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 
 import {AppRoutingModule } from './app-routing.module';
 import {AppComponent } from './app.component';
@@ -28,7 +28,7 @@ import { MPaginationItemsPerPageDirective } from './directives/m-pagination-item
   declarations: [
     AppComponent,
     DialogComponent,
-    MPaginationItemsPerPageDirective
+    MPaginationItemsPerPageDirective,
   ],
   imports: [
     BrowserModule,
@@ -50,9 +50,8 @@ import { MPaginationItemsPerPageDirective } from './directives/m-pagination-item
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    
   ],
-  providers: [],
+  providers: [Title],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

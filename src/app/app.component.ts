@@ -6,6 +6,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import { ApiService } from './services/api.service';
 import { MatSort, Sort } from '@angular/material/sort';
 import {LiveAnnouncer} from '@angular/cdk/a11y';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -14,7 +15,6 @@ import {LiveAnnouncer} from '@angular/cdk/a11y';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Seafood'
   count?:number
 
   displayedColumns: string[] = ['date', 'productName', 'category', 'brands', 'price', 'amount', 'comment', 'action'];
@@ -23,12 +23,15 @@ export class AppComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator
   @ViewChild(MatSort) sort!: MatSort
   
-  constructor(private dialog: MatDialog, private api: ApiService, private _liveAnnouncer: LiveAnnouncer){
+  public constructor(private dialog: MatDialog, private api: ApiService,
+    private _liveAnnouncer: LiveAnnouncer){
 
   }
+
   ngOnInit(): void {
     this.getAllProducts()
   }
+
 
   openDialog() {
     this.dialog.open(DialogComponent, {
