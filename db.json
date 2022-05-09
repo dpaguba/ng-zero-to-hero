@@ -1,18 +1,8 @@
 {
   "productList": [
     {
-      "productName": "Salmon",
-      "category": "Fish",
-      "brands": "American Seafood",
-      "price": 100,
-      "amount": 78,
-      "date": "2022-05-10T22:00:00.000Z",
-      "comment": "",
-      "id": 1
-    },
-    {
       "productName": "Tune",
-      "category": "Medusozoa",
+      "category": "Tunicates",
       "brands": "Trident Seafoods",
       "price": 54,
       "amount": 5,
@@ -29,6 +19,56 @@
       "date": "2025-11-04T23:00:00.000Z",
       "comment": "octttopppusss",
       "id": 3
+    },
+    {
+      "productName": "Goldfish",
+      "category": "Fish",
+      "brands": "Trident Seafoods",
+      "price": 123,
+      "amount": 1,
+      "date": "2022-04-30T22:00:00.000Z",
+      "comment": "Rare Goldfish",
+      "id": 10
+    },
+    {
+      "productName": "Shrimp",
+      "category": "Roe",
+      "brands": "Pacific Seafood",
+      "price": 10,
+      "amount": 5000,
+      "date": "2022-05-27T22:00:00.000Z",
+      "comment": "Tiger shrimps from egypt",
+      "id": 11
+    },
+    {
+      "productName": "Crab",
+      "category": "Shellfish",
+      "brands": "Trident Seafoods",
+      "price": 456,
+      "amount": 13,
+      "date": "2022-05-27T22:00:00.000Z",
+      "comment": "",
+      "id": 12
+    },
+    {
+      "productName": "Salmon",
+      "category": "Fish",
+      "brands": "Bumble Bee Foods",
+      "price": 56,
+      "amount": 5,
+      "date": "2022-05-12T22:00:00.000Z",
+      "comment": "",
+      "id": 13
+    },
+    {
+      "productName": "Pike",
+      "category": "Fish",
+      "brands": "Pacific Seafood",
+      "price": 12,
+      "amount": 1,
+      "date": "2022-05-10T22:00:00.000Z",
+      "comment": "",
+      "id": 14
     }
   ],
   "comments": [

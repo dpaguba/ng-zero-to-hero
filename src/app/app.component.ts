@@ -14,18 +14,14 @@ import {LiveAnnouncer} from '@angular/cdk/a11y';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Seafood';
+  title = 'Seafood'
+  count?:number
 
   displayedColumns: string[] = ['date', 'productName', 'category', 'brands', 'price', 'amount', 'comment', 'action'];
   dataSource !: MatTableDataSource<any>
 
   @ViewChild(MatPaginator) paginator!: MatPaginator
   @ViewChild(MatSort) sort!: MatSort
-
-  // ngAfterViewInit() {
-  //   this.dataSource.paginator = this.paginator;
-  //   this.dataSource.sort = this.sort;
-  // }
   
   constructor(private dialog: MatDialog, private api: ApiService, private _liveAnnouncer: LiveAnnouncer){
 
@@ -37,7 +33,12 @@ export class AppComponent implements OnInit {
   openDialog() {
     this.dialog.open(DialogComponent, {
       width: "30%"
-    });
+    }).afterClosed().subscribe(val=>{
+      if(val === "save"){
+        this.getAllProducts()
+      }
+    })
+    
   }
 
   getAllProducts(){
@@ -52,7 +53,36 @@ export class AppComponent implements OnInit {
         alert("Error while fetching the goods!")
       }
     })
+    
   }
+
+  editProduct(row: any){
+    this.dialog.open(DialogComponent, {
+      width: "30%",
+      data: row
+    }).afterClosed().subscribe(val=>{
+      if(val === "update"){
+        this.getAllProducts()
+      }
+    })
+  }
+
+  deleteProduct(id: number){
+    this.api.deleteProduct(id)
+    .subscribe({
+      next: (res)=>{
+        alert("Product deleted successfully")
+        this.getAllProducts()
+        window.location.reload()
+      },
+      error: ()=>{
+        alert("Error while deleting the records!")
+      }
+    })
+    window.location.reload()
+  }
+
+  
 
   applyFilter(event: Event){
     const filterValue = (event.target as HTMLInputElement).value

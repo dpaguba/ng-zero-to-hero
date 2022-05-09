@@ -20,13 +20,15 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import { MPaginationItemsPerPageDirective } from './directives/m-pagination-items-per-page.directive';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DialogComponent
+    DialogComponent,
+    MPaginationItemsPerPageDirective
   ],
   imports: [
     BrowserModule,
