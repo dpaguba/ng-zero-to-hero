@@ -73,13 +73,13 @@ export class AppComponent implements OnInit {
       next: (res)=>{
         alert("Product deleted successfully")
         this.getAllProducts()
-        window.location.reload()
+        // window.location.reload()
       },
       error: ()=>{
         alert("Error while deleting the records!")
       }
     })
-    window.location.reload()
+    // window.location.reload()
   }
 
   

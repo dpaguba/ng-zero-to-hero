@@ -50,18 +50,18 @@ export class DialogComponent implements OnInit {
           next: (res)=>{
             alert("Product added successfully")
             this.productForm.reset()
-            this.dialog.close()
+            this.dialog.close("save")
           },
           error: ()=>{
             alert("Error while adding the product")
-            this.dialog.close("save")
+            this.dialog.close()
           }
         })
       }
     }else{
       this.updateProduct()
     }
-    window.location.reload()
+    // window.location.reload()
   }
 
   updateProduct(){
@@ -76,7 +76,7 @@ export class DialogComponent implements OnInit {
         alert("Error while updating the record!")
       }
     })
-    window.location.reload()
+    // window.location.reload()
   }
 
   
