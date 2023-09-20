@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "ng-wether-app"
+  "defaultProject": "ng-wether-app",
+  "cli": {
+    "analytics": false
+  }
 }
