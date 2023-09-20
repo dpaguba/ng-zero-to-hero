@@ -104,5 +104,8 @@
       }
     }
   },
-  "defaultProject": "ng-productboard"
+  "defaultProject": "ng-productboard",
+  "cli": {
+    "analytics": false
+  }
 }
