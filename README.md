@@ -21,6 +21,8 @@ Here are the Angular projects you'll find in this repository:
    - **Angular Material:** Angular Material components are used to create a user-friendly and visually appealing interface.
  - **Demo**:
 
+![ezgif com-video-to-gif](https://github.com/dpaguba/ng-zero-to-hero/assets/88382171/003d514f-eb50-4c0e-9e5a-e178f52e23dc)
+
 <br>
 
 ### Weather App 🌡️
