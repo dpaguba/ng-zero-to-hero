@@ -6,20 +6,37 @@ Welcome to the Angular Projects repository! This repository is a collection of v
 
 Here are the Angular projects you'll find in this repository:
 
-- [Animated Number Counter 🔢](#animated-number-counter-) - is a visual element used in web development to display a numerical value that increases or decreases with a smooth and visually appealing animation. 
-- [Background Generator 🌈](#background-generator-) - is a tool application used in design and web development to create custom and visually appealing backgrounds for websites.
+- [ProductBoard 📝](#productboard-) - is a web application developed to demonstrate the complete set of CRUD (Create, Read, Update, Delete) operations on a product management system.
+- [Weather App 🌡️](#weather-app-) - is a tool application used in design and web development to create custom and visually appealing backgrounds for websites.
 
 ## Preview 🌟
 
-### Animated Number Counter 🔢
- - **Folder:** [📁 animated-number-counter](/animated-number-counter/)
- - **Description:** animated number counter is a dynamic and eye-catching way to present numerical data on websites and applications. It combines the power of animation, JavaScript, and CSS to make data more engaging and interactive for users, making it a popular choice for websites that want to convey statistics and achievements effectively.
+### ProductBoard 📝
+ - **Folder:** [📁 ng-productboard](/ng-productboard/)
+ - **Description:** The Angular ProductBoard project can be a valuable resource for learning how to implement CRUD (Create, Read, Update, Delete) operations in an Angular application. It provides a hands-on experience with Angular and demonstrates best practices for building web applications. You can explore the project, customize it, and extend its features to meet your specific requirements.
+ - **Technologies Used:**
+   - **Angular:** The project is built with Angular, an open-source web application framework.
+   - **Angular CLI:** Angular CLI is used for project setup, development, and deployment.
+   - **HTML/CSS/TypeScript:** Core web technologies for creating web components and features.
+   - **Angular Material:** Angular Material components are used to create a user-friendly and visually appealing interface.
  - **Demo**:
 
-![number](https://user-images.githubusercontent.com/88382171/226492389-f2c9a846-4e2f-48c8-8c47-1c0e87cb86da.gif)
+<br>
 
-## Getting Started
+### Weather App 🌡️
+ - **Folder:** [📁 ng-weather-app](/ng-weather-app/)
+ - **Description:** The Angular Weather App is a practical example of how to create a web application that integrates with external data sources, displaying real-time information to users. It can be a great resource for learning how to work with APIs and build responsive web applications using Angular.
+ - **Technologies Used:**
+   - **Angular:** The project leverages Angular for building the frontend components and handling user interactions.
+   - **HTML/CSS:** Basic web technologies are used to structure the app's layout and style it.
+   - **TypeScript:** TypeScript is employed for writing clean and maintainable code, making it easier to manage the application's logic.
+   - **API Integration:** The app  integrates with a weather data provider, fetching real-time weather information for different locations. This involved by making HTTP requests to a weather API.
+   - **Responsive Design:** The app is designed to adapt to various screen sizes, making use of responsive design principles and CSS media queries.
+ - **Demo:**
 
+<br>
+
+## Getting Started 🏁
 To get started with any of the projects in this repository, follow these steps:
 
 1. **Clone the Repository**: Use the following command to clone the repository to your local machine.
