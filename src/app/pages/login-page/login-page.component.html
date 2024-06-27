@@ -1,1 +1,29 @@
-<p>login-page works!</p>
+<form 
+    action=""
+    class="login-form"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit($event)"
+    >
+    <h1 class="h1 mb60">Sign In</h1>
+    <label class="tt-control-label mb16">
+        Username
+        <input 
+            formControlName="username"
+            type="text"
+            placeholder="Enter username"
+            class="tt-input"
+        >
+    </label>
+    <label class="tt-control-label mb32">
+        Password
+        <input
+        formControlName="password"
+            type="text"
+            placeholder="Enter password"
+            class="tt-input"
+        >
+    </label>
+
+    <button class="btn btn-shadow" type="submit">Sign In</button>
+</form>
+<img src="/assets/svg/logo.svg" alt="Tik Tak Logo">
