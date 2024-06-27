@@ -2,7 +2,7 @@
     border: 1px solid var(--light-color);
     padding: 32px 24px;
     display: grid;
-    grid-auto-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 32px;
 }
 
@@ -31,4 +31,9 @@
 
 }
 .profile-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    height: min-content
 }
+
