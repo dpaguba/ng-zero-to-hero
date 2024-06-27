@@ -2,6 +2,8 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthServiceService } from '../../auth/auth-service.service';
+import { filter, from, map, reduce } from 'rxjs';
+import { Router } from '@angular/router';
 // import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -14,24 +16,24 @@ import { AuthServiceService } from '../../auth/auth-service.service';
 export class LoginPageComponent {
 
   authService = inject(AuthServiceService);
+  router = inject(Router);
   
   form: FormGroup = new FormGroup(
     {
-      username: new FormControl(null, Validators.required),
-      password: new FormControl(null, Validators.required),
+      username: new FormControl<string | null>(null, Validators.required),
+      password: new FormControl<string | null>(null, Validators.required),
     }
   )
+
+  constructor() { }
 
   onSubmit(): void{
 
     if(this.form.valid){
       // @ts-ignore
       this.authService.login(this.form.value).subscribe(
-        (response) => {
-          console.log(response)
-        },
-        (error) => {
-          console.log(error)
+        () => {
+          this.router.navigateByUrl('')
         }
       );
     }
