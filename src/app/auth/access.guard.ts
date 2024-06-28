@@ -1,9 +1,9 @@
 import { inject } from "@angular/core"
-import { AuthServiceService } from "./auth-service.service";
+import { AuthService } from "./auth.service";
 import { Router } from "@angular/router";
 
 export const canActiveAuth = () => {
-    const isLoggedIn: boolean= inject(AuthServiceService).isAuthenticated; 
+    const isLoggedIn: boolean= inject(AuthService).isAuthenticated; 
 
     return isLoggedIn ? true : inject(Router).createUrlTree(['/login']);
 }
