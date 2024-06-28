@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AuthServiceService } from '../../auth/auth-service.service';
+import { AuthService } from '../../auth/auth.service';
 import { filter, from, map, reduce } from 'rxjs';
 import { Router } from '@angular/router';
 // import { RouterOutlet } from '@angular/router';
@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent {
 
-  authService = inject(AuthServiceService);
+  authService = inject(AuthService);
   router = inject(Router);
   
   form: FormGroup = new FormGroup(
