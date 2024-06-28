@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal, WritableSignal } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../auth/auth.service';
@@ -17,6 +17,8 @@ export class LoginPageComponent {
 
   authService = inject(AuthService);
   router = inject(Router);
+
+  isPasswordVisible: WritableSignal<boolean> = signal<boolean>(false);
   
   form: FormGroup = new FormGroup(
     {
@@ -38,6 +40,10 @@ export class LoginPageComponent {
       );
     }
     
+  }
+
+  togglePasswordVisibility(): void{
+    this.isPasswordVisible.set(!this.isPasswordVisible());
   }
 
 }
