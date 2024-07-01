@@ -6,6 +6,7 @@
     --light-color: #ffffff;
     --primary-color: #AE7AFF;
     --grey-color: #5f646d;
+    --dark-hover-color: #201f1f;
 }
 
 *,
@@ -105,4 +106,15 @@ body{
     outline: var(--primary-color);
     border: 1px solid var(--light-color);
     transition: all .5s ease-out;
+}
+
+.small-logo{
+ width: 50px;
+ height: 50px;
+}
+
+.medium-text{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.25em;
 }
