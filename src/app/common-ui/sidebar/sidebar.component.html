@@ -13,18 +13,16 @@
     </ul>
 </nav>
 
-<p class="medium-text mb20">
+<p class="medium-text mb16">
     Subscribers
 </p>
 
-<pre>
-
-    {{ subscribers$ | async | json }}
-</pre>
-
-
-<div>
-    @for (subscriber of subscribers$; track subscriber.id) {}
+<div class="mb20">
+    @for (subscriber of subscribers$ | async; track subscriber.id) {
+    <app-subscriber-card
+    [profile]="subscriber"
+    ></app-subscriber-card>
+}
 </div>
 
 
@@ -43,3 +41,27 @@
         </svg>
     </a>
 </div>
+
+<footer class="sidebar__footer">
+    @if (me(); as me) {
+        @if(me.avatarUrl){
+            <img [src]="me.avatarUrl | imgUrl" alt="">
+        }@else {
+            <svg
+            icon="defaultAvatar"
+            class="sidebar__footer-item__svg">
+            ></svg>
+        }
+        
+        <div class="medium-text username-text">
+            {{me.username}}
+        </div>
+
+        <a [routerLink]="['settings']" class="settings-btn">
+            <svg
+                icon="settings">
+            ></svg>
+        </a>
+    }
+
+</footer>
