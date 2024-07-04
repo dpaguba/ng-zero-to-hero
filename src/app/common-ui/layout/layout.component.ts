@@ -14,10 +14,4 @@ export class LayoutComponent {
   pofileService = inject(ProfileService);
 
   constructor() { }
-
-  ngOnInit() {
-    this.pofileService.getMe().subscribe((profile) => {
-      console.log(profile);
-    })
-  }
 }
