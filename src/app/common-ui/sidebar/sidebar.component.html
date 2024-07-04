@@ -1,1 +1,45 @@
-<p>sidebar works!</p>
+<img src="assets/svg/logo.svg" alt="Tik Talk Logo"  class="small-logo ml16 mb20">
+
+<nav class="mb20">
+    <ul class="main-menu-list">
+        <li *ngFor="let menuItem of menuItems">
+            <a class="menu-item" [routerLink]="[menuItem.link]">
+                <svg [icon]="menuItem.icon" class="menu-item__svg"></svg>
+                <span>
+                    {{ menuItem.label }}
+                </span>
+            </a>
+        </li> 
+    </ul>
+</nav>
+
+<p class="medium-text mb20">
+    Subscribers
+</p>
+
+<pre>
+
+    {{ subscribers$ | async | json }}
+</pre>
+
+
+<div>
+    @for (subscriber of subscribers$; track subscriber.id) {}
+</div>
+
+
+<div class="to-subscribers mb20">
+    <a 
+        [routerLink]="['/subscribers']"
+        class="to-subscribers__link medium-text"
+    >
+        <span>
+            View all subscribers
+        </span>
+        <svg
+            icon="chevron-right"
+            class="to-subscribers__svg"
+        >
+        </svg>
+    </a>
+</div>
