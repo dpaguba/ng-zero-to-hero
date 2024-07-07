@@ -73,6 +73,13 @@
     grid-template-columns: 32px 1fr 16px;
 }
 
+.sidebar__footer__avatar{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+
+}
+
 .sidebar__footer-item__svg{
     color: var(--primary-color);
     width: 32px;
