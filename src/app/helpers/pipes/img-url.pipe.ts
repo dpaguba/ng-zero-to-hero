@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { environment } from '../../../environments/environment.development';
 
 @Pipe({
   name: 'imgUrl',
@@ -11,7 +12,7 @@ export class ImgUrlPipe implements PipeTransform {
       // replace with default image
       return null;
     }
-    return `https://icherniakov.ru/yt-course/${value}`;
+    return `${environment.API_URL}${value}`;
   }
 
 }
