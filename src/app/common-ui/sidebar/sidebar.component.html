@@ -45,7 +45,7 @@
 <footer class="sidebar__footer">
     @if (me(); as me) {
         @if(me.avatarUrl){
-            <img [src]="me.avatarUrl | imgUrl" alt="">
+            <img [src]="me.avatarUrl | imgUrl" alt="" class="sidebar__footer__avatar">
         }@else {
             <svg
             icon="defaultAvatar"
