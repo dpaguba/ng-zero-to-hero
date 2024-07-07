@@ -43,4 +43,10 @@ export class ProfileService {
   updateProfile(profile: Partial<Profile>){
     return this.http.patch(`${this.baseApiUrl}account/me`, profile)
   }
+
+  uploadAvatar(avatar: File){
+    const formData = new FormData();
+    formData.append('image', avatar);
+    return this.http.post(`${this.baseApiUrl}account/upload_image`, formData) 
+  }
 }
