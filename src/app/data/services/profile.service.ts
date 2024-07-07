@@ -3,6 +3,7 @@ import { inject, Injectable, signal } from '@angular/core';
 import { Profile } from '../interfaces/profile.interface';
 import { Pageable } from '../interfaces/pageable.interface';
 import { map, tap } from 'rxjs';
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { map, tap } from 'rxjs';
 export class ProfileService {
 
   http :HttpClient = inject(HttpClient);
-  baseApiUrl ='https://icherniakov.ru/yt-course/'
+  baseApiUrl = environment.API_URL
   
   me = signal<Profile | null>(null)
 
