@@ -7,6 +7,7 @@
     --primary-color: #AE7AFF;
     --grey-color: #5f646d;
     --dark-hover-color: #201f1f;
+    --light-transparent-color: rgba(255, 255, 255, 0.75);
 }
 
 *,
@@ -135,4 +136,39 @@ body{
 .svg{
     width: 16px;
     height: 16px;
+}
+
+.tt-form-input{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4em;
+    border: none;
+    border-bottom: 1px solid var(--light-color);
+    height: 33px;
+    background: none;
+    color: var(--light-color);
+
+    &:focus-visible{
+        outline: transparent;
+        border-bottom: 1px solid var(--primary-color);
+    }
+}
+
+.tt-form-label{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
+
+.tt-form-label__text{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.2em;
+    color: var(--light-transparent-color);
+}
+
+.tt-textarea{
+    height: 84px;
+    resize: none;
 }
