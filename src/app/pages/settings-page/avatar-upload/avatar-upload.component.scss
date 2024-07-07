@@ -19,11 +19,11 @@
     display: grid;
     place-content: center;
 
-    // &.dropzone-content{
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    // }
+    &.dropzone-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     &.fileover{
         border: 2px dashed var(--primary-color);
