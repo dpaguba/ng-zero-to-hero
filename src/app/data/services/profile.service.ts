@@ -39,4 +39,8 @@ export class ProfileService {
       map(res => res.items.slice(0, subscribersAmount))
     )
   }
+
+  updateProfile(profile: Partial<Profile>){
+    return this.http.patch(`${this.baseApiUrl}account/me`, profile)
+  }
 }
