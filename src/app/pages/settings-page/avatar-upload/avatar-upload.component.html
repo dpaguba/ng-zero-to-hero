@@ -1,0 +1,21 @@
+@if (preview().length === 0) {
+    <div>
+        <svg
+            icon="defaultAvatar"
+            class="avatar">
+        </svg>
+    </div>    
+}
+@else{
+    <img [src]="preview()" alt="Avatar" class="avatar">
+}
+<div dnd class="dropzone" (keyup.enter)="fileDrop.click()" (fileDropped)="onFileDropped($event)">
+    <div class="dropzone-content">
+        <svg
+            icon="home"
+            class="dropzone-content__upload">
+        </svg>
+        <span class="medium-text">Drag and Drop your image or Upload </span>
+    </div>
+    <input tabindex="-1" class="avatar-input" type="file" #fileDrop (change)="fileBrowserHandler($event)">
+</div>
