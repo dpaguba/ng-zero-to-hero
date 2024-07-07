@@ -26,7 +26,7 @@ export class SidebarComponent {
     {
       icon: 'home',
       label: 'Home',
-      link: ''
+      link: 'profile/me'
     },
     {
       icon: 'chats',
