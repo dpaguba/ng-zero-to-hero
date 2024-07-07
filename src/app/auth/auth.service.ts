@@ -5,14 +5,15 @@ import { TokenResponse } from './auth.interface';
 import { CookieService } from 'ngx-cookie-service';
 import { throwError } from 'rxjs';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  baseApiUrl: string ='https://icherniakov.ru/yt-course/auth/'
-  token: string | null = null;
+  baseApiUrl: string = environment.API_URL + 'auth/'
+;  token: string | null = null;
   refresh_token: string | null = null;
 
   http: HttpClient = inject(HttpClient);
