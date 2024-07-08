@@ -29,6 +29,7 @@
     border-radius: 2px;
     text-decoration: none;
 
+    &.active,
     &:hover,
     &:focus-visible{
         background-color: var(--dark-hover-color);

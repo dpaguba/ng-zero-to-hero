@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { SvgIconComponent } from '../svg-icon/svg.component';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { SubscriberCardComponent } from '../subscriber-card/subscriber-card.component';
 import { ProfileService } from '../../data/services/profile.service';
 import { firstValueFrom, map } from 'rxjs';
@@ -12,7 +12,7 @@ import { ImgUrlPipe } from "../../helpers/pipes/img-url.pipe";
     standalone: true,
     templateUrl: './sidebar.component.html',
     styleUrl: './sidebar.component.scss',
-    imports: [SvgIconComponent, CommonModule, RouterModule, SubscriberCardComponent, ImgUrlPipe]
+    imports: [SvgIconComponent, CommonModule, RouterModule, RouterLinkActive, RouterLink, SubscriberCardComponent, ImgUrlPipe]
 })
 export class SidebarComponent {
 
