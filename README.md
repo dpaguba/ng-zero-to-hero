@@ -4,3 +4,6 @@ Target
 
 How it looks now:
 
+
+https://github.com/dpaguba/ng-tik-talk/assets/88382171/eda163f8-0b42-4760-b6c7-21a0736c0efe
+
