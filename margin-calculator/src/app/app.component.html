@@ -1,0 +1,89 @@
+<form [formGroup]="form" autocomplete="off">
+  <mat-icon class="info-icon" (click)="openInfoBottomSheet()">
+    info
+  </mat-icon>
+  <div class="risk-fields">
+    <!-- risk amount -->
+    <mat-form-field class="risk-amount">
+      <mat-label>
+        Risk
+      </mat-label>
+      <input type="number" matInput formControlName="riskAmount">
+      <mat-error *ngIf="form.get('riskAmount')?.hasError('min')">
+        Value can't be negative
+      </mat-error>
+      <mat-error *ngIf="form.get('riskAmount')?.hasError('max')">
+        Value can't be higher than 100
+      </mat-error>
+    </mat-form-field>
+    <!-- risk option -->
+    <mat-form-field class="risk-option">
+      <mat-select formControlName="riskOption" (selectionChange)="checkRiskOption()">
+        <mat-option value="%">%</mat-option>
+        <mat-option value="$">$</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <!-- deposit balance -->
+  <mat-form-field *ngIf="form.value.riskOption === '%'">
+    <mat-label>
+      Deposit Balance
+    </mat-label>
+    <input type="number" matInput formControlName="depositBalance">
+    <mat-error *ngIf="form.get('depositBalance')?.hasError('min')">
+      Value can't be negative
+    </mat-error>
+  </mat-form-field>
+   <!-- leverage -->
+   <mat-form-field>
+    <mat-label>
+      Leverage
+    </mat-label>
+    <input type="number" matInput formControlName="creditLeverage">
+    <mat-error *ngIf="form.get('creditLeverage')?.hasError('min')">
+      Value can't be negative
+    </mat-error>
+    <mat-error *ngIf="form.get('creditLeverage')?.hasError('max')">
+      Value can't be higher than 125
+    </mat-error>
+  </mat-form-field>
+  <!-- Entry point -->
+  <mat-form-field class="col-span-2">
+    <mat-label>
+      Entry Price
+    </mat-label>
+    <input type="number" matInput formControlName="entryPoint">
+    <mat-error *ngIf="form.get('entryPoint')?.hasError('min')">
+      Value can't be negative
+    </mat-error>
+  </mat-form-field>
+  <!-- take profit -->
+  <mat-form-field class="col-span-2">
+    <mat-label>
+      Take Profit
+    </mat-label>
+    <input type="number" matInput formControlName="takeProfit">
+    <mat-error *ngIf="form.get('takeProfit')?.hasError('min')">
+      Value can't be negative
+    </mat-error>
+  </mat-form-field>
+  <!-- Stop-loss -->
+  <mat-form-field class="col-span-2">
+    <mat-label>
+      Stop Loss
+    </mat-label>
+    <input type="number" matInput formControlName="stopLoss">
+    <mat-error *ngIf="form.get('stopLoss')?.hasError('min')">
+      Value can't be negative
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="displayMargin()">Calculate margin</button>
+  <h1 *ngIf="calculatedMargin !== 0">
+    Required margin: {{calculatedMargin | currency}}
+    <mat-error class="error-text" *ngIf="isMarginBiggerThanDeposit && form.value.riskOption === '%'">
+      Margin is higher than your deposit balance
+    </mat-error>
+  </h1>
+  <h1 *ngIf="form.value.riskOption === '%' && potentialLoss !== 0">Potential loss: {{potentialLoss | currency}}</h1>
+  <h1 *ngIf="potentialProfit !== 0">Potential profit: {{potentialProfit | currency}}</h1>
+</form>

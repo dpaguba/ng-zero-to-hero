@@ -1,0 +1,16 @@
+@import "@angular/material/prebuilt-themes/pink-bluegrey.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+    margin: 0;
+    background-color: black;
+    background-image: url("assets/images/TradingBG.jpg"), url("https://dataman.in/wp-content/uploads/2016/11/tradingbg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.info-sheet {
+    max-width: 800px !important;
+    padding: 10px !important;
+}

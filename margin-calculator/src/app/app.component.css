@@ -1,0 +1,51 @@
+:host{
+    @apply flex flex-col justify-center items-center h-screen w-screen;
+}
+
+form {
+    @apply relative grid grid-cols-2 w-full max-w-[400px] p-12 text-lg text-neutral-100 gap-y-4;
+}
+
+.risk-fields{
+    @apply col-span-2 flex justify-start items-center relative;
+}
+
+.risk-amount{
+    @apply w-[calc(100%-30px)];
+}
+
+.risk-option{
+    @apply absolute w-[30px] right-0
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+mat-form-field {
+    @apply col-span-2 relative;
+}
+
+button {
+    @apply col-span-2;
+}
+
+h1{
+    @apply relative text-xl text-neutral-100 col-span-2;
+}
+
+.error-text {
+    @apply absolute text-[13.5px] -bottom-[20px]; 
+}
+
+.info-icon{
+    @apply absolute top-10 right-6 cursor-pointer hover:scale-110 transition-all;
+}
